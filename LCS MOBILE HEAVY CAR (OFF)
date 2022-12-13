@@ -1,0 +1,42 @@
+{$CLEO .csi}
+
+03A9: name_thread 'HEAVLCO'
+
+:T1
+0001: wait 0 ms  
+00DB: if
+00E5:   player $PLAYER_CHAR driving 
+004D: jump_if_false @NOTCAR
+0002: jump @CAR
+hex
+22 22 4D 4F 44 20 42 59 20 48 41 43 4B 49 4D 50 4C 41 59 22 22
+end
+:CAR
+0001: wait 0 ms  
+03C6: 0@ = player $PLAYER_CHAR car   
+0002: jump @T2
+hex
+22 22 4D 4F 44 20 42 59 20 48 41 43 4B 49 4D 50 4C 41 59 22 22
+end
+:T2
+0001: wait 0 ms 
+01F1: make_car 0@ very_heavy 0 
+00BB: text 'HEALNON' 2000 ms 1
+0002: jump @END
+hex
+22 22 4D 4F 44 20 42 59 20 48 41 43 4B 49 4D 50 4C 41 59 22 22
+end
+:NOTCAR
+0001: wait 0 ms  
+00BB: text 'HEALNIC' 2000 ms 1
+0002: jump @END
+hex
+22 22 4D 4F 44 20 42 59 20 48 41 43 4B 49 4D 50 4C 41 59 22 22
+end
+:END
+0001: wait 0 ms 
+004E: end_thread 
+hex
+22 22 4D 4F 44 20 42 59 20 48 41 43 4B 49 4D 50 4C 41 59 22 22
+end
+ 
