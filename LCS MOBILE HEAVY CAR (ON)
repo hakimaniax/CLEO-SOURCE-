@@ -1,4 +1,4 @@
-{$CLEO .csi}
+{$CLEO .csi} // for gta lcs
 
 03A9: name_thread 'HEAVLCS'
 
